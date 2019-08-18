@@ -16,10 +16,10 @@ public abstract class MessageModule {
     @Binds
     @Singleton
     @Named("DEBUG")
-    public abstract MyMessage provideDebugMessage(DebugMessage message);
+    public abstract MyMessage bindDebugMessage(DebugMessage message);
 
     @Binds
     @Singleton
     @Named("PRODUCTION")
-    public abstract MyMessage provideUserMessage(UserMessage message);
+    public abstract MyMessage bindUserMessage(UserMessage message);
 }

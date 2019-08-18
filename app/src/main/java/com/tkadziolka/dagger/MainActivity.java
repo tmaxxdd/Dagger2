@@ -1,8 +1,6 @@
 package com.tkadziolka.dagger;
 
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -16,7 +14,6 @@ import com.tkadziolka.dagger.data.RemoteDataSource;
 import com.tkadziolka.dagger.data.SharedPrefsUtil;
 import com.tkadziolka.dagger.message.MyMessage;
 import com.tkadziolka.dagger.utils.NetworkHelper;
-import com.tkadziolka.dagger.utils.NetworkState;
 import com.tkadziolka.dagger.utils.Worker;
 
 import java.util.Set;
@@ -48,7 +45,6 @@ public class MainActivity extends DaggerAppCompatActivity {
     MainFragment mainFragment;
 
     private AppCompatTextView dataView;
-    private IntentFilter filter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,21 +64,13 @@ public class MainActivity extends DaggerAppCompatActivity {
 
         showFragmentButton.setOnClickListener(view -> showFragment());
 
-        filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        registerReceiver(networkHelper, filter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        if (NetworkState.isConnected) {
+        if (networkHelper.isOnline(this)) {
 
             for (DataSource source: dataSources) {
                 if (source instanceof RemoteDataSource) {
@@ -101,12 +89,6 @@ public class MainActivity extends DaggerAppCompatActivity {
         }
 
         myMessage.showMessage(sharedPrefsUtil.getSharedData());
-    }
-
-    @Override
-    protected void onPause() {
-        unregisterReceiver(networkHelper);
-        super.onPause();
     }
 
     private void showFragment() {

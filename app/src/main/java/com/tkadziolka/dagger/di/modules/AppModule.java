@@ -16,6 +16,6 @@ public abstract class AppModule {
     @Binds
     @Singleton
     @ForApplication
-    abstract Context provideAppContext(Application app);
+    abstract Context bindAppContext(Application app);
 
 }

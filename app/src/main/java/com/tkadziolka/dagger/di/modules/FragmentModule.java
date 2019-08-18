@@ -9,6 +9,6 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class FragmentModule {
 
     @ContributesAndroidInjector
-    abstract MainFragment fragment();
+    abstract MainFragment mainFragment();
 
 }

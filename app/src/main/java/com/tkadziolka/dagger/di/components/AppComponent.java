@@ -1,10 +1,10 @@
-package com.tkadziolka.dagger.di;
+package com.tkadziolka.dagger.di.components;
 
 import android.app.Application;
 
 import com.tkadziolka.dagger.MyApp;
+import com.tkadziolka.dagger.di.ActivityBindingModule;
 import com.tkadziolka.dagger.di.modules.AppModule;
-import com.tkadziolka.dagger.di.modules.BroadcastModule;
 import com.tkadziolka.dagger.di.modules.DataModule;
 import com.tkadziolka.dagger.di.modules.FragmentModule;
 import com.tkadziolka.dagger.di.modules.MessageModule;
@@ -22,7 +22,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
         AndroidSupportInjectionModule.class,
         AppModule.class,
         FragmentModule.class,
-        BroadcastModule.class,
         DataModule.class,
         MessageModule.class
 })
