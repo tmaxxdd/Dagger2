@@ -1,6 +1,6 @@
 # Dagger2 w Android
 ![Dagger2 course background](/dagger_udemy_thumbnail.png)
-## Kod podejmuje zagadnienia takie jak:
+## Omówione adnotacje
 * @Inject
 * @Provides
 * @Module
@@ -8,3 +8,11 @@
 * @Singleton
 * @Scope
 * @Binds
+* @Reusable
+* @Qualifiers
+* @BindsInstance
+* @BindsOptional
+* @IntoSet
+* @Named
+
+## 
