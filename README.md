@@ -15,4 +15,12 @@
 * @IntoSet
 * @Named
 
-## 
+## Zrealizowane scenariusze
+* Tworzenie komponentu i modułów
+* Dostarczanie implementacji tego samego interfejsu
+* Tworzenie zbioru zależności
+* Tworzenie pojedynczej instancji
+* Tworzenie zakresów dla komponentów
+* Dzielenie na subkomponenty
+* Wykorzystanie dagger-android
+* Obsługa klasy Context
